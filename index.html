@@ -20,7 +20,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
-            /* 新增：淡淡的點狀紋理背景，解決空虛感 */
+            /* 背景紋理 */
             background-image: radial-gradient(#dbe0e4 1.5px, transparent 1.5px);
             background-size: 20px 20px;
             margin: 0;
@@ -33,22 +33,20 @@
             padding: 0 20px;
         }
 
-        /* --- Header 大改版：深藍漸層風格 --- */
+        /* --- Header 深藍漸層風格 --- */
         header {
-            /* 漸層背景：從深藍灰流動到亮藍 */
             background: linear-gradient(135deg, #2c3e50 0%, #2980b9 100%);
-            padding: 50px 40px; /* 增加一點高度 */
+            padding: 50px 40px;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(44, 62, 80, 0.3); /* 加深陰影 */
+            box-shadow: 0 10px 20px rgba(44, 62, 80, 0.3);
             display: flex;
             align-items: center;
             gap: 30px;
-            color: white; /* 文字改為白色 */
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        /* 增加一點裝飾光澤感 (背景特效) */
         header::after {
             content: '';
             position: absolute;
@@ -60,24 +58,26 @@
             transform: skewX(-20deg);
         }
 
+        /* --- 照片修正區 --- */
         .profile-img-container {
             width: 120px; 
             height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.8); /* 半透明白框 */
+            border: 4px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             flex-shrink: 0;
             background-color: #fff;
             position: relative;
-            z-index: 2; /* 確保照片在裝飾層上面 */
+            z-index: 2;
         }
 
         .profile-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center top; 
+            object-fit: cover; /* 保持比例填滿 */
+            /* ★ 這裡修改了：改成 center (置中)，避免切到頭頂或下巴 */
+            object-position: center; 
         }
 
         .header-content {
@@ -87,13 +87,13 @@
 
         .header-content h1 {
             margin: 0;
-            color: white; /* 名字改為白色 */
+            color: white;
             font-size: 2.2em;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .header-content .title {
-            color: #bde0ff; /* 職稱改為淡藍色 */
+            color: #bde0ff;
             font-size: 1.1em;
             font-weight: bold;
             margin-top: 5px;
@@ -102,7 +102,7 @@
         }
         
         .header-content p {
-            color: rgba(255, 255, 255, 0.9); /* 簡介改為微透白色 */
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.95em;
         }
 
@@ -110,7 +110,7 @@
             display: flex;
             gap: 20px;
             font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.85); /* 聯絡資訊改為白色 */
+            color: rgba(255, 255, 255, 0.85);
             flex-wrap: wrap;
             margin-top: 15px;
         }
@@ -119,22 +119,21 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.1); /* 增加一點底色塊 */
+            background: rgba(255,255,255,0.1);
             padding: 5px 12px;
             border-radius: 20px;
         }
         
         .contact-info i {
-            color: #f1c40f; /* 圖示改成金色 */
+            color: #f1c40f;
         }
 
-        /* --- 下方內容區塊保持乾淨白色 --- */
         section {
             background: var(--section-bg);
             padding: 35px;
             margin-top: 30px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* 陰影更柔和 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         h2 {
@@ -148,12 +147,10 @@
             font-size: 1.4em;
         }
         
-        /* 圖示微調 */
         h2 i {
             color: var(--accent-color);
         }
 
-        /* 自傳樣式 */
         .bio-content p {
             margin-bottom: 15px;
             text-align: justify;
@@ -248,7 +245,7 @@
         }
         
         .cert-item:hover {
-            transform: translateY(-3px); /* 滑鼠移過去會微微浮起 */
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
@@ -258,7 +255,6 @@
             gap: 12px;
         }
 
-        /* 證書類別顏色 */
         .cert-item.award { border-left-color: var(--gold-color); background: #fffdf5; }
         .cert-item.esg { border-left-color: #27ae60; }
         .cert-item.finance { border-left-color: #f39c12; }
@@ -298,8 +294,8 @@
         .cert-image {
             margin-top: 10px;
             width: 100%;
-            height: 180px; /* 固定高度讓排版整齊 */
-            object-fit: cover; /* 改為 cover 讓圖片填滿框框比較好看，點擊可看大圖(需寫JS，這裡先做靜態) */
+            height: 180px;
+            object-fit: cover;
             object-position: top;
             border: 1px solid #eee;
             border-radius: 4px;
@@ -307,9 +303,8 @@
             transition: all 0.3s;
         }
         
-        /* 滑鼠移到證書圖片上時的效果 */
         .cert-image:hover {
-            object-fit: contain; /* 滑鼠移過去時顯示完整圖片 */
+            object-fit: contain;
             height: auto;
             min-height: 180px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
