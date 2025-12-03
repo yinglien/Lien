@@ -58,7 +58,7 @@
             transform: skewX(-20deg);
         }
 
-        /* --- 照片修正區 --- */
+        /* --- 照片樣式 --- */
         .profile-img-container {
             width: 120px; 
             height: 120px;
@@ -75,9 +75,8 @@
         .profile-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 保持比例填滿 */
-            /* ★ 這裡修改了：改成 center (置中)，避免切到頭頂或下巴 */
-            object-position: center; 
+            object-fit: cover;
+            object-position: center; /* 保持置中 */
         }
 
         .header-content {
@@ -339,7 +338,7 @@
             <div class="header-content">
                 <h1>陳映璉 (Sally Chen)</h1>
                 <div class="title">產品經理 (PM) | 數位金融專員</div>
-                <p>具備豐富金融前線實務與數位產品專案管理經驗。現任銀行 PM，專注於數位帳戶流程優化、異常監控報表建置及跨部門信貸合作。擁有 MBA 學位，並曾因防制洗錢優異表現獲記嘉獎。</p>
+                <p>具備豐富金融前線實務與數位產品專案管理經驗。現任銀行 PM，專注於數位帳戶流程優化、異常監控報表建置，並能運用 Figma 與 Canva 進行視覺溝通與專案協作。</p>
                 <div class="contact-info">
                     <span><i class="fas fa-phone-alt"></i> 0989-064-989</span>
                     <span><i class="fas fa-envelope"></i> kitty8031@gmail.com</span>
@@ -357,8 +356,8 @@
                 <p><strong>銀行前線與服務經驗：</strong><br>
                 碩士畢業後進入銀行業第一線擔任櫃檯行員，從台幣現金收付到分行金庫管控，並負責查控疑似洗錢案件。因對職業道德的堅持，成功通報重大洗錢案件並獲得總行嘉獎。在職期間，我試著與主管溝通改善作業流程，提升團隊效率。此外，我熱愛服務人群，對待顧客親切且有耐心，連續兩年獲得「分行存匯協銷第一名」與「特優行員」殊榮，並在五年內從初階存匯晉升至高階存匯。</p>
                 
-                <p><strong>跨領域行銷熱忱：</strong><br>
-                在管理學與實務經驗中，我對於「行銷」領域充滿興趣。平時工作的協銷經驗啟發了我對市場行銷的好奇心，因此我也積極進修相關課程（如 Facebook 廣告投放），期許能將行銷與銷售融會貫通，為產品創造更多價值。</p>
+                <p><strong>跨領域行銷與設計熱忱：</strong><br>
+                在管理學與實務經驗中，我對於「行銷」與「設計」領域充滿興趣。不僅進修 Facebook 廣告投放，更利用業餘時間自學 Figma 與 Canva，實際應用於工作中的流程圖繪製與接案圖文製作，期許能將金融專業與數位技能結合，為產品創造更多價值。</p>
             </div>
         </section>
 
@@ -371,11 +370,25 @@
                     <span class="date">2024/02 - 至今</span>
                 </div>
                 <div class="job-details">
-                    <p>負責數位金融產品規劃與專案執行：</p>
+                    <p>負責數位金融產品規劃與專案執行，<strong>並主動自學 Figma 軟體，應用於專案流程圖繪製與介面溝通。</strong></p>
                     <ul>
                         <li><strong>數位帳戶臨櫃升級專案</strong>：規劃並解決客戶無自然人憑證之升級需求，優化開戶體驗。</li>
                         <li><strong>異常監控報表建置</strong>：設計並導入 3 種數位帳戶異常監控報表，提升風險控管效率。</li>
                         <li><strong>跨產品合作</strong>：主導數位帳戶與個人信用貸款之合作專案，促進產品交叉銷售。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-title">接案圖文設計 / 網站建置 <span class="company">| 個人接案</span></span>
+                    <span class="date">2023/10 - 2024/02</span>
+                </div>
+                <div class="job-details">
+                    <p>運用轉職空檔精進數位技能，自學 <strong>Canva</strong> 進行圖文創作與網頁素材製作。</p>
+                    <ul>
+                        <li><strong>品牌網站建置</strong>：協助製作與排版「0.38」品牌網站圖文內容 (參考連結：<a href="https://0point38.qdm.tw/" target="_blank" style="color:#3498db; text-decoration:none;">0point38.qdm.tw</a>)。</li>
+                        <li><strong>社群素材設計</strong>：製作社群行銷貼文與廣告素材，提升品牌視覺質感。</li>
                     </ul>
                 </div>
             </div>
@@ -432,10 +445,9 @@
             <div class="skills-container">
                 <span class="skill-tag">專案管理</span>
                 <span class="skill-tag">數位金融運營</span>
-                <span class="skill-tag">ESG 永續金融</span>
+                <span class="skill-tag" style="background:#e8f4fc; border-color:#3498db; color:#2980b9;">Figma (UI/UX 溝通)</span> <span class="skill-tag" style="background:#e8f4fc; border-color:#3498db; color:#2980b9;">Canva (視覺設計)</span> <span class="skill-tag">ESG 永續金融</span>
                 <span class="skill-tag">洗錢防制 (AML)</span>
                 <span class="skill-tag">Facebook 廣告投放</span>
-                <span class="skill-tag">財務分析</span>
                 <span class="skill-tag">英語 (流利)</span>
             </div>
 
@@ -470,7 +482,7 @@
                     <div class="cert-header">
                         <i class="fas fa-ad cert-icon" style="color: #3b5998;"></i>
                         <div class="cert-content">
-                            <strong>數位行銷</strong>
+                            <strong>數位行銷與設計</strong>
                             <div>Facebook 廣告投手學程結業 (56小時)</div>
                             <div style="font-size:0.8em; color:#999;">燒賣研究所 | 2023/10</div>
                             <div>TQC-DK 電子商務概論</div>
@@ -519,4 +531,3 @@
 
 </body>
 </html>
-
