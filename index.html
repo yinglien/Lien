@@ -22,10 +22,9 @@
             background-color: var(--bg-color);
             
             /* --- 背景圖設定 (讀取 bg.jpg) --- */
-            /* 設定多重背景：優先讀取 bg.jpg，讀不到則顯示圓點紋理 */
             background-image: url('bg.jpg'), radial-gradient(#dbe0e4 1.5px, transparent 1.5px);
             background-size: cover, 20px 20px;
-            background-attachment: fixed; /* 背景固定不動，提升質感 */
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat, repeat;
             
@@ -41,7 +40,6 @@
 
         /* --- Header Banner 設定 (讀取 banner.jpg) --- */
         header {
-            /* 設定多重背景：優先顯示濾鏡+banner.jpg，讀不到則顯示深藍漸層 */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.jpg'), linear-gradient(135deg, #2c3e50 0%, #2980b9 100%);
             background-size: cover, cover, auto;
             background-position: center;
@@ -58,7 +56,6 @@
             overflow: hidden;
         }
 
-        /* 大頭照樣式 */
         .profile-img-container {
             width: 120px; 
             height: 120px;
@@ -76,7 +73,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center; /* 讓照片置中 */
+            object-position: center;
         }
 
         .header-content {
@@ -134,9 +131,8 @@
             color: #f1c40f;
         }
 
-        /* 內容區塊樣式 */
         section {
-            background: rgba(255, 255, 255, 0.95); /* 微透明背景 */
+            background: rgba(255, 255, 255, 0.95);
             padding: 35px;
             margin-top: 30px;
             border-radius: 10px;
@@ -159,7 +155,6 @@
             color: var(--accent-color);
         }
 
-        /* 自傳文字 */
         .bio-content p {
             margin-bottom: 15px;
             text-align: justify;
@@ -172,7 +167,6 @@
             font-size: 1.05em;
         }
 
-        /* 工作經歷列表 */
         .job-item {
             margin-bottom: 25px;
             padding-left: 20px;
@@ -220,7 +214,7 @@
             color: #444;
         }
 
-        /* --- 影片播放器專用樣式 --- */
+        /* --- 影片播放器 (YouTube 嵌入版) --- */
         .video-container {
             margin-top: 20px;
             background: #f8f9fa;
@@ -231,20 +225,28 @@
         .video-title {
             font-weight: bold;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        video {
-            width: 100%;
-            max-width: 100%;
+        /* RWD 影片容器：保持 16:9 比例 */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background-color: #000; /* 影片載入前的底色 */
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        /* 技能標籤 */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -261,7 +263,6 @@
             font-weight: 500;
         }
 
-        /* 證書列表 */
         .cert-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -429,11 +430,16 @@
                     </ul>
                     
                     <div class="video-container">
-                        <div class="video-title"><i class="fas fa-video"></i> Canva 影音作品：自我介紹短片</div>
-                        <video controls playsinline preload="metadata">
-                            <source src="video.mp4" type="video/mp4">
-                            您的瀏覽器不支援影片播放，請下載後觀看。
-                        </video>
+                        <div class="video-title"><i class="fab fa-youtube" style="color: #ff0000;"></i> Canva 影音作品：自我介紹短片</div>
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/JPgXQcTvPOM" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
