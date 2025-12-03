@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳映璉 Sally Chen | 個人履歷</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --section-bg: #ffffff;
+            --gold-color: #f1c40f; /* 金色，用於獎項 */
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--section-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* 照片區域 */
+        .profile-img-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            background-color: #eee; /* 預防照片沒載入時的底色 */
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top; 
+        }
+
+        .header-content h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2em;
+        }
+
+        .header-content .title {
+            color: var(--accent-color);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        section {
+            background: var(--section-bg);
+            padding: 30px;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .job-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .company {
+            color: #666;
+            font-weight: normal;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        .job-details {
+            margin-top: 10px;
+        }
+
+        .job-details ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #ecf0f1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2c3e50;
+            border: 1px solid #bdc3c7;
+        }
+
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid #ddd;
+            position: relative;
+        }
+        
+        /* 各類別顏色 */
+        .cert-item.award { border-left-color: var(--gold-color); background: #fffdf5; } /* 獎項專用色 */
+        .cert-item.esg { border-left-color: #27ae60; }
+        .cert-item.finance { border-left-color: #f39c12; }
+        .cert-item.tech { border-left-color: #3b5998; }
+
+        .cert-icon {
+            margin-top: 3px;
+            font-size: 1.2em;
+        }
+
+        .cert-content strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+
+        .cert-content div {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        /* 標籤樣式 */
+        .tag-pill {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .tag-award { background: #fef9e7; color: #d35400; border: 1px solid #f39c12; }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="profile-img-container">
+                <img src="photo.jpg" alt="陳映璉照片">
+            </div>
+            
+            <div class="header-content">
+                <h1>陳映璉 (Sally Chen)</h1>
+                <div class="title">產品經理 (PM) | 數位金融專員</div>
+                <p>具備豐富金融前線實務與數位產品專案管理經驗。現任銀行 PM，專注於數位帳戶流程優化、異常監控報表建置及跨部門信貸合作。擁有 MBA 學位，並曾因防制洗錢優異表現獲記嘉獎，具備高度風險意識與法遵合規能力。</p>
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> 0989-064-989</span>
+                    <span><i class="fas fa-envelope"></i> sallychen@example.com</span> <span><i class="fas fa-map-marker-alt"></i> 台北市</span>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2><i class="fas fa-briefcase"></i> 工作經歷</h2>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-title">產品經理 (PM) <span class="company">| 聯邦銀行</span></span>
+                    <span class="date">2024/02 - 至今</span>
+                </div>
+                <div class="job-details">
+                    <p>負責數位金融產品規劃與專案執行：</p>
+                    <ul>
+                        <li><strong>數位帳戶臨櫃升級專案</strong>：規劃並解決客戶無自然人憑證之升級需求，優化開戶體驗。</li>
+                        <li><strong>異常監控報表建置</strong>：設計並導入 3 種數位帳戶異常監控報表，提升風險控管效率。</li>
+                        <li><strong>跨產品合作</strong>：主導數位帳戶與個人信用貸款之合作專案，促進產品交叉銷售。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-title">高級辦事員 / 櫃檯行員 <span class="company">| 台北富邦銀行 (原日盛銀行)</span></span>
+                    <span class="date">2016/11 - 2023/05</span>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        <li><strong>業績表現優異</strong>：連續兩年獲得分行存匯協銷第一名、特優行員殊榮。</li>
+                        <li><strong>風險控管殊榮</strong>：主動通報疑似洗錢案件，獲總行頒發嘉獎二次。</li>
+                        <li><strong>客戶服務</strong>：負責現金收付、金融產品推廣，具備高抗壓性與優質服務態度。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-title">銷售員 <span class="company">| 微風百貨 (荷旺蝦餅)</span></span>
+                    <span class="date">2013/01 - 2013/02</span>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        <li>協助店面營運與庫存管理，任職期間協助提升雇主 5% 業績。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> 學歷</h2>
+            <div class="job-item" style="border-left-color: #95a5a6;">
+                <div class="job-header">
+                    <span class="job-title">MBA 企業管理碩士</span>
+                    <span class="date">2015/08 - 2016/07</span>
+                </div>
+                <div>Southwest Minnesota State University (美國)</div>
+            </div>
+            <div class="job-item" style="border-left-color: #95a5a6;">
+                <div class="job-header">
+                    <span class="job-title">國際貿易學系 學士</span>
+                    <span class="date">2011/09 - 2014/06</span>
+                </div>
+                <div>中國文化大學</div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-certificate"></i> 專業技能、證照與殊榮</h2>
+            
+            <h3 style="font-size: 1em; color: #666; margin-bottom: 10px;">核心技能</h3>
+            <div class="skills-container">
+                <span class="skill-tag">專案管理</span>
+                <span class="skill-tag">數位金融運營</span>
+                <span class="skill-tag">ESG 永續金融</span>
+                <span class="skill-tag">洗錢防制 (AML)</span>
+                <span class="skill-tag">Facebook 廣告投放</span>
+                <span class="skill-tag">英語 (流利)</span>
+            </div>
+
+            <h3 style="font-size: 1em; color: #666; margin-top: 20px; margin-bottom: 10px;">榮譽獎項 & 專業證照</h3>
+            <div class="cert-list">
+                
+                <div class="cert-item award">
+                    <i class="fas fa-trophy cert-icon" style="color: #f1c40f;"></i>
+                    <div class="cert-content">
+                        <strong>防制洗錢績優嘉獎 <span class="tag-pill tag-award">榮譽</span></strong>
+                        <div>日盛金控 | 2020/09</div>
+                        <div style="font-size:0.85em; color:#d35400;">主動通報疑似洗錢案件，獲記嘉獎二次</div>
+                    </div>
+                </div>
+
+                <div class="cert-item esg">
+                    <i class="fas fa-leaf cert-icon" style="color: #27ae60;"></i>
+                    <div class="cert-content">
+                        <strong>ESG 與法遵合規</strong>
+                        <div>永續發展基礎能力測驗 (2025/05)</div>
+                        <div>防制洗錢與打擊資恐專業人員 (2025/04)</div>
+                    </div>
+                </div>
+
+                <div class="cert-item tech">
+                    <i class="fas fa-ad cert-icon" style="color: #3b5998;"></i>
+                    <div class="cert-content">
+                        <strong>數位行銷</strong>
+                        <div>Facebook 廣告投手學程結業 (56小時)</div>
+                        <div style="font-size:0.8em; color:#999;">燒賣研究所 | 2023/10</div>
+                    </div>
+                </div>
+
+                <div class="cert-item finance">
+                    <i class="fas fa-file-invoice-dollar cert-icon" style="color: #f39c12;"></i>
+                    <div class="cert-content">
+                        <strong>金融與保險證照群</strong>
+                        <div>信託、內控、衍生性商品、人身/財產保險</div>
+                        <div>金融市場常識與道德、投信投顧乙科</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-plane"></i> 未來規劃</h2>
+            <p>目前於聯邦銀行任職至 2026 年 4 月，並計畫於 2026 年 5 月前往菲律賓進行為期三個月的英語進修，持續精進語言能力以拓展國際職涯視野。</p>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; color: #aaa; padding-bottom: 20px;">
+            <p>&copy; 2025 Sally Chen. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
