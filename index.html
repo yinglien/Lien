@@ -22,10 +22,10 @@
             background-color: var(--bg-color);
             
             /* --- 背景圖設定 (讀取 bg.jpg) --- */
-            /* 如果沒放圖片，會顯示預設的淺灰色 */
+            /* 如果妳有準備背景圖，請改名為 bg.jpg 上傳；若無則顯示預設淺灰 */
             background-image: url('bg.jpg'); 
-            background-size: cover;       /* 讓圖片填滿整個螢幕 */
-            background-attachment: fixed; /* 讓背景固定不動，製造高級感 */
+            background-size: cover;
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             
@@ -41,12 +41,12 @@
 
         /* --- Header Banner 設定 (讀取 banner.jpg) --- */
         header {
-            /* 這裡有兩層：上面是半透明黑色濾鏡，下面是妳的圖片 */
+            /* 如果妳有準備橫幅圖，請改名為 banner.jpg 上傳 */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.jpg');
             background-size: cover;
             background-position: center;
             
-            padding: 60px 40px; /* 稍微加高一點，讓圖看得到更多 */
+            padding: 60px 40px;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             display: flex;
@@ -57,12 +57,6 @@
             overflow: hidden;
         }
 
-        /* 拿掉原本的裝飾線，讓圖片更清楚 */
-        header::after {
-            display: none; 
-        }
-
-        /* --- 照片樣式 --- */
         .profile-img-container {
             width: 120px; 
             height: 120px;
@@ -86,14 +80,14 @@
         .header-content {
             position: relative;
             z-index: 2;
-            width: 100%; /* 確保內容寬度 */
+            width: 100%;
         }
 
         .header-content h1 {
             margin: 0;
             color: white;
             font-size: 2.2em;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* 加強文字陰影，確保在圖片上清楚 */
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         .header-content .title {
@@ -110,7 +104,7 @@
             color: rgba(255, 255, 255, 0.95);
             font-size: 0.95em;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-            max-width: 600px; /* 避免文字太長蓋住整個畫面 */
+            max-width: 600px;
         }
 
         .contact-info {
@@ -127,10 +121,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 0, 0, 0.3); /* 加深底色塊 */
+            background: rgba(0, 0, 0, 0.3);
             padding: 5px 12px;
             border-radius: 20px;
-            backdrop-filter: blur(2px); /* 磨砂玻璃效果 */
+            backdrop-filter: blur(2px);
             border: 1px solid rgba(255,255,255,0.2);
         }
         
@@ -139,7 +133,7 @@
         }
 
         section {
-            background: rgba(255, 255, 255, 0.95); /* 微微透明，讓背景圖隱約透出一點點質感 */
+            background: rgba(255, 255, 255, 0.95);
             padding: 35px;
             margin-top: 30px;
             border-radius: 10px;
@@ -219,6 +213,28 @@
         .job-details li {
             margin-bottom: 5px;
             color: #444;
+        }
+
+        /* 影片播放器樣式 */
+        .video-container {
+            margin-top: 15px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .video-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .skills-container {
@@ -402,6 +418,14 @@
                         <li><strong>品牌網站建置</strong>：協助製作與排版「0.38」品牌網站圖文內容 (參考連結：<a href="https://0point38.qdm.tw/" target="_blank" style="color:#3498db; text-decoration:none;">0point38.qdm.tw</a>)。</li>
                         <li><strong>社群素材設計</strong>：製作社群行銷貼文與廣告素材，提升品牌視覺質感。</li>
                     </ul>
+                    
+                    <div class="video-container">
+                        <div class="video-title"><i class="fas fa-video"></i> Canva 影音作品：自我介紹短片</div>
+                        <video controls>
+                            <source src="intro.mp4" type="video/mp4">
+                            您的瀏覽器不支援影片播放，請下載後觀看。
+                        </video>
+                    </div>
                 </div>
             </div>
 
