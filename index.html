@@ -22,7 +22,6 @@
             background-color: var(--bg-color);
             
             /* --- 背景圖設定 (讀取 bg.jpg) --- */
-            /* 如果妳有準備背景圖，請改名為 bg.jpg 上傳；若無則顯示預設淺灰 */
             background-image: url('bg.jpg'); 
             background-size: cover;
             background-attachment: fixed;
@@ -41,7 +40,6 @@
 
         /* --- Header Banner 設定 (讀取 banner.jpg) --- */
         header {
-            /* 如果妳有準備橫幅圖，請改名為 banner.jpg 上傳 */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.jpg');
             background-size: cover;
             background-position: center;
@@ -421,8 +419,8 @@
                     
                     <div class="video-container">
                         <div class="video-title"><i class="fas fa-video"></i> Canva 影音作品：自我介紹短片</div>
-                        <video controls>
-                            <source src="intro.mp4" type="video/mp4">
+                        <video controls playsinline preload="metadata">
+                            <source src="video.mp4" type="video/mp4">
                             您的瀏覽器不支援影片播放，請下載後觀看。
                         </video>
                     </div>
